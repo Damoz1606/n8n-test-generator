@@ -10,7 +10,7 @@ export class CreateCredentialService implements CreateCredentialUseCase {
 
     async execute(payload: CreateCredentialCommand): Promise<Result<string>> {
         const optional = await this.repository.findOne(payload.username);
-        if (optional.isEmpty) return failure("Credential already exists");
+        if (!optional.isEmpty) return failure("Credential already exists");
 
         const credential = createCredentials(payload.username, payload.password);
 

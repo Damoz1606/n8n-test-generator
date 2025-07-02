@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1203ae67-aff9-463e-9819-133cdc0917db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/n8n/simple-application/_base/optional.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/n8n/simple-application/_base/result.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/n8n/simple-application/_base/use-case.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/n8n/simple-application/application/commands/create-credential.command.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/n8n/simple-application/application/interfaces/credential-repository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/n8n/simple-application/application/services/create-credential.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/n8n/simple-application/application/use-cases/create-credential.use-case.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/n8n/simple-application/domain/credential.domain.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n8n/simple-application/application/services/create-credential.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n8n/simple-application/application/services/create-credential.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n8n/simple-application/application/services/create-credential.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/n8n/simple-application/application/services/create-credential.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1751466708938</updated>
       <workItem from="1751466709988" duration="12255000" />
-      <workItem from="1751479388024" duration="97000" />
+      <workItem from="1751479388024" duration="3993000" />
     </task>
     <servers />
   </component>
