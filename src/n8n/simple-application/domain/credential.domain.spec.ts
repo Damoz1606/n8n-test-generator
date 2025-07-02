@@ -12,7 +12,7 @@
 // Should handle very long username strings without truncation or error.
 // Should handle very long password strings without truncation or error.
 
-
+import {createCredentials} from "./credential.domain";
 
 describe('createCredentials', () => {
   let mockRandomUUID: jest.SpyInstance;
@@ -39,7 +39,7 @@ describe('createCredentials', () => {
     const username = 'testuser';
     const password = 'testpassword123';
 
-    const result: Credential = createCredentials(username, password);
+    const result = createCredentials(username, password);
 
     expect(result).toBeDefined();
     expect(result.username).toBe(username);
@@ -51,10 +51,10 @@ describe('createCredentials', () => {
   // Test Case 4: Should generate a valid UUID string for the 'id' field.
   it('testCaseId: 4 - Should generate a valid UUID string for the "id" field', () => {
     // Ensure the mock returns a string that matches a UUID format
-    const expectedUuid = 'a1b2c3d4-e5f6-7890-1234-567890abcdef';
+    const expectedUuid = 'a1b2c3d4-e5f6-4890-8234-567890abcdef';
     mockRandomUUID.mockReturnValue(expectedUuid);
 
-    const result: Credential = createCredentials('user', 'pass');
+    const result = createCredentials('user', 'pass');
 
     expect(result.id).toBe(expectedUuid);
     // Regex for a standard UUID v4 format
@@ -69,8 +69,8 @@ describe('createCredentials', () => {
       .mockReturnValueOnce('unique-uuid-1')
       .mockReturnValueOnce('unique-uuid-2');
 
-    const result1: Credential = createCredentials('user1', 'pass1');
-    const result2: Credential = createCredentials('user2', 'pass2');
+    const result1 = createCredentials('user1', 'pass1');
+    const result2 = createCredentials('user2', 'pass2');
 
     expect(result1.id).not.toBe(result2.id);
     expect(result1.id).toBe('unique-uuid-1');
@@ -81,7 +81,7 @@ describe('createCredentials', () => {
   it('testCaseId: 6 - Should handle an empty string for the username', () => {
     const username = '';
     const password = 'anypassword';
-    const result: Credential = createCredentials(username, password);
+    const result = createCredentials(username, password);
 
     expect(result.username).toBe(username);
     expect(result.password).toBe(password);
@@ -91,7 +91,7 @@ describe('createCredentials', () => {
   it('testCaseId: 7 - Should handle an empty string for the password', () => {
     const username = 'anyuser';
     const password = '';
-    const result: Credential = createCredentials(username, password);
+    const result = createCredentials(username, password);
 
     expect(result.username).toBe(username);
     expect(result.password).toBe(password);
@@ -101,7 +101,7 @@ describe('createCredentials', () => {
   it('testCaseId: 8 - Should handle usernames containing special characters', () => {
     const username = '!@#$%^&*()_+{}|:"<>?~`';
     const password = 'password123';
-    const result: Credential = createCredentials(username, password);
+    const result = createCredentials(username, password);
 
     expect(result.username).toBe(username);
     expect(result.password).toBe(password);
@@ -111,7 +111,7 @@ describe('createCredentials', () => {
   it('testCaseId: 9 - Should handle passwords containing special characters', () => {
     const username = 'regularUser';
     const password = '!@#$%^&*()_+{}|:"<>?~`';
-    const result: Credential = createCredentials(username, password);
+    const result = createCredentials(username, password);
 
     expect(result.username).toBe(username);
     expect(result.password).toBe(password);
@@ -121,7 +121,7 @@ describe('createCredentials', () => {
   it('testCaseId: 10 - Should handle very long username strings without truncation or error', () => {
     const longUsername = 'a'.repeat(10000); // A very long string
     const password = 'shortpass';
-    const result: Credential = createCredentials(longUsername, password);
+    const result = createCredentials(longUsername, password);
 
     expect(result.username).toBe(longUsername);
     expect(result.username.length).toBe(10000);
@@ -132,7 +132,7 @@ describe('createCredentials', () => {
   it('testCaseId: 11 - Should handle very long password strings without truncation or error', () => {
     const username = 'shortuser';
     const longPassword = 'b'.repeat(10000); // A very long string
-    const result: Credential = createCredentials(username, longPassword);
+    const result = createCredentials(username, longPassword);
 
     expect(result.username).toBe(username);
     expect(result.password).toBe(longPassword);
