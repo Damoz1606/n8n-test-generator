@@ -1,0 +1,41 @@
+# Node.js dependencies
+/node_modules
+
+# Compiled TypeScript output
+/dist
+/build
+/out
+*.js
+*.js.map
+*.d.ts
+
+# TypeScript build info file
+.tsbuildinfo
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Editor and IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+
+# Test coverage reports
+/coverage
+
+# Other temporary or build-related files
+*.tgz
+*.zip
+*.rar
